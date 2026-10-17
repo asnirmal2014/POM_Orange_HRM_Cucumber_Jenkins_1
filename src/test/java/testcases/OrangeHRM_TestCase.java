@@ -4,6 +4,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import pages.Dashboard;
 import pages.LoginPage;
+import pages.AdminPage;
 import utility.TestBase;
 
 public class OrangeHRM_TestCase extends TestBase 
@@ -26,6 +27,10 @@ public class OrangeHRM_TestCase extends TestBase
 		dashboard.clickOnProfile();
 		Thread.sleep(8000);
 		dashboard.clickOnProfileLogOut();
+		
+		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+		Thread.sleep(5000);
+		
 	}
 }
 
