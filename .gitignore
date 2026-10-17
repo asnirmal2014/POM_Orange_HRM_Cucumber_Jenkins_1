@@ -1,0 +1,92 @@
+#
+This is the latest updated '.gitignore' file.
+#
+
+# ==============================================================
+#  .gitignore — Maven Web Project (Selenium / TestNG framework)
+# ==============================================================
+
+# --------------------------------------------------------------
+# Build output (Maven, Eclipse, IntelliJ)
+# Note: no leading "/" so nested Maven modules are covered too
+# --------------------------------------------------------------
+target/
+build/
+bin/
+out/
+
+# --------------------------------------------------------------
+# Maven release artifacts
+# --------------------------------------------------------------
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# --------------------------------------------------------------
+# TestNG / Surefire / Report output
+# --------------------------------------------------------------
+test-output/
+test-output-report/
+emailable-report.html
+surefire-reports/
+ExtentReports/
+extent-reports/
+allure-results/
+allure-report/
+
+# --------------------------------------------------------------
+# Selenium run artifacts
+# (Remove "screenshots/" if you intentionally commit evidence images)
+# --------------------------------------------------------------
+screenshots/
+downloads/
+
+# --------------------------------------------------------------
+# Logs
+# --------------------------------------------------------------
+*.log
+logs/
+
+# --------------------------------------------------------------
+# Eclipse IDE files and metadata
+# (.metadata/ and .recommenders/ removed — they live one level
+#  above the repo, in the workspace folder, so never matched)
+# --------------------------------------------------------------
+.classpath
+.project
+.factorypath
+.settings/
+.externalToolBuilders/
+*.launch
+
+# --------------------------------------------------------------
+# IntelliJ IDEA
+# --------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# --------------------------------------------------------------
+# VS Code
+# --------------------------------------------------------------
+.vscode/
+
+# --------------------------------------------------------------
+
+# --------------------------------------------------------------
+
+# --------------------------------------------------------------
+# OS / editor temp files
+# --------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+*.swp
+*~
