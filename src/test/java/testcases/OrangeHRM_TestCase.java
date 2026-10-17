@@ -32,6 +32,8 @@ public class OrangeHRM_TestCase extends TestBase
 		adminPage.clickOnProfile();
 		Thread.sleep(5000);
 		adminPage.clickOnProfileLogOut();
+		
+		Thread.sleep(5000);
 	}
 }
 
