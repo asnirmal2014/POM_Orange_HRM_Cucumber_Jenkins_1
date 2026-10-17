@@ -28,6 +28,7 @@ public class OrangeHRM_TestCase extends TestBase
 		Thread.sleep(5000);
 		
 		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+		Thread.sleep(2000);
 		adminPage.clickOnProfile();
 		Thread.sleep(5000);
 		adminPage.clickOnProfileLogOut();
