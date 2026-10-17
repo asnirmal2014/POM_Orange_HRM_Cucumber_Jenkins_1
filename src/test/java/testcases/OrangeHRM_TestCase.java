@@ -23,14 +23,14 @@ public class OrangeHRM_TestCase extends TestBase
 		Thread.sleep(5000);
 
 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
-
-		dashboard.clickOnProfile();
-		Thread.sleep(8000);
-		dashboard.clickOnProfileLogOut();
+		dashboard.clickOnAdminPageLink();
 		
-		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
 		Thread.sleep(5000);
 		
+		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+		adminPage.clickOnProfile();
+		Thread.sleep(5000);
+		adminPage.clickOnProfileLogOut();
 	}
 }
 

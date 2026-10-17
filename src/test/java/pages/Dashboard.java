@@ -21,17 +21,11 @@ public class Dashboard
 	//@FindBy(how = How.XPATH , using="//*[@id=\"welcome-menu\"]/ul/li[2]/a") WebElement profilelogout;	
 	*/
 	
-	@FindBy(how = How.XPATH, using="//img[@class='oxd-userdropdown-img']") WebElement profile;
-	@FindBy(how = How.XPATH , using="//a[normalize-space()='Logout']") WebElement profilelogout;
+	@FindBy(how = How.XPATH, using="//div[@class='oxd-sidepanel-body']//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name'][text()='Admin']") WebElement adminPageLink;
 	
-	public void clickOnProfile()
+	public void clickOnAdminPageLink()
 	{
-		profile.click();
-	}
-	
-	public void clickOnProfileLogOut()
-	{
-		profilelogout.click();
+		adminPageLink.click();
 	}
 }
 

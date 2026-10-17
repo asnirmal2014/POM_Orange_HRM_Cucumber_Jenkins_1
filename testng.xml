@@ -7,6 +7,7 @@
 			<class name="testcases.OrangeHRM_TestCase" />
 			<class name="pages.LoginPage" />
 			<class name="pages.Dashboard" />
+			<class name="pages.AdminPage" />
 		</classes>
 	</test>
-</suite> 
+</suite>
