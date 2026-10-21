@@ -14,12 +14,6 @@ public class Dashboard
 		this.driver = driver;
 	}
 	
-	/*
-	@FindBy(how = How.ID, using="welcome") WebElement profile;
-	@FindBy(how = How.XPATH , using="//a[text()='Logout']") WebElement profilelogout;
-	//@FindBy(how = How.XPATH , using="//*[@id=\"welcome-menu\"]/ul/li[2]/a") WebElement profilelogout;	
-	*/
-	
 	@FindBy(how = How.XPATH, using="//div[@class='oxd-sidepanel-body']//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name'][text()='Admin']") WebElement adminPageLink;
 	
 	public void clickOnAdminPageLink()
@@ -27,4 +21,3 @@ public class Dashboard
 		adminPageLink.click();
 	}
 }
-
