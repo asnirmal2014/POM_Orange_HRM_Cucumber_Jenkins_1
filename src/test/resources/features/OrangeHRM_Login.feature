@@ -13,4 +13,5 @@ Feature: OrangeHRM Login and Logout functionality
     When User clicks on the profile dropdown
     And User clicks on the Logout link
     Then User should be logged out successfully
+
         

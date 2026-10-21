@@ -6,10 +6,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.webprj</groupId>
-    <artifactId>POM_Orange_HRM_Login_Cucumber_Jenkins_1</artifactId>
+    <artifactId>POM_Orange_HRM_Cucumber_Jenkins_1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>POM_Orange_HRM_Login_Cucumber_Jenkins_1</name>
+    <name>POM_Orange_HRM_Cucumber_Jenkins_1</name>
     <url>http://www.example.com</url>
 
     <properties>

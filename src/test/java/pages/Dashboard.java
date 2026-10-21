@@ -21,3 +21,5 @@ public class Dashboard
 		adminPageLink.click();
 	}
 }
+
+

@@ -27,4 +27,3 @@ public class AdminPage
 		profilelogout.click();
 	}
 }
-

@@ -79,3 +79,4 @@ public class OrangeHRMStepDefs
         System.out.println("User logged out successfully");
     }
 }
+
