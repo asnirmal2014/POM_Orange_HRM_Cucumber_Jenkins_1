@@ -4,4 +4,4 @@ Feature: User navigation from Dashbard page to PIM page
     Given User is on the Dashboard page
     When User clicks on the PIM page icon from the Dashboard page
     Then User should be navigated to the PIM page
-    
+      
