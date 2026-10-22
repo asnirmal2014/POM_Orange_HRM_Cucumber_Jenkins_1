@@ -9,8 +9,8 @@ import io.cucumber.junit.platform.engine.Constants;
 @Suite
 @IncludeEngines("cucumber")
 //@SelectPackages("features")
-@SelectClasspathResource("features/Login.feature")
-@SelectClasspathResource("features/Dashboard.feature")
+@SelectClasspathResource("features/1_Login.feature")
+@SelectClasspathResource("features/2_Dashboard.feature")
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "com.stepdefinitions, utility")
 @ConfigurationParameter(key = Constants.PLUGIN_PUBLISH_QUIET_PROPERTY_NAME, value = "true")
 @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber/report.html")
