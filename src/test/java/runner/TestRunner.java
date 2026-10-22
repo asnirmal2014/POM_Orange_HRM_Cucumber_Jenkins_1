@@ -9,11 +9,15 @@ import io.cucumber.junit.platform.engine.Constants;
 @Suite
 @IncludeEngines("cucumber")
 //@SelectPackages("features")
-@SelectClasspathResource("features/OrangeHRM_Login.feature")
+@SelectClasspathResource("features/Login.feature")
+@SelectClasspathResource("features/Dashboard.feature")
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "com.stepdefinitions, utility")
 @ConfigurationParameter(key = Constants.PLUGIN_PUBLISH_QUIET_PROPERTY_NAME, value = "true")
 @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber/report.html")
 @ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME, value = "false")
+//@ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME, value = "true")
+//@ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME, value = "true") => When dry-run is false, Cucumber tries to execute the tests live, sees that the step definitions are missing, and skips them. Once you have pasted and saved your step definitions, make sure to change dry-run back to false so your actual automated tests can run.
+//@ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME, value = "false") => When dry-run is false, Cucumber tries to execute the tests live, sees that the step definitions are missing, and skips them. Once you have pasted and saved your step definitions, make sure to change dry-run back to false so your actual automated tests can run.
 @ConfigurationParameter(key = Constants.ANSI_COLORS_DISABLED_PROPERTY_NAME, value = "false")
 //@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@tag and @tag1")
 //@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@sanity or @regression or @critical")

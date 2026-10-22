@@ -1,9 +1,7 @@
-Feature: OrangeHRM Login and Logout functionality
-  As an admin user when I enter the correct username and password I should be navigated to the Dashbaord page
+Feature: User navigation from Dashbard page to PIM page 
 
-  Scenario: Successful login, navigate to Dashboard page
-    Given User is on the OrangeHRM login page
-    When User enters username "Admin" and password "admin123"
-    And User clicks on the Login button
-    Then User should be navigated to the Dashboard page
+  Scenario: User navigate to PIM page from Dashboard page
+    Given User is on the Dashboard page
+    When User clicks on the PIM page icon from the Dashboard page
+    Then User should be navigated to the PIM page
     

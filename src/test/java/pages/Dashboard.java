@@ -14,12 +14,18 @@ public class Dashboard
 		this.driver = driver;
 	}
 	
-	@FindBy(how = How.XPATH, using="//div[@class='oxd-sidepanel-body']//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name'][text()='Admin']") WebElement adminPageLink;
+	@FindBy(how = How.XPATH, using="//div[@class='oxd-sidepanel-body']//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and normalize-space()='PIM']") WebElement pimPageLink;
+	//@FindBy(how = How.XPATH, using="//div[@class='oxd-sidepanel-body']//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name'][text()='Admin']") WebElement adminPageLink;
 	
+	public void clickOnPIMPageLink()
+	{
+		pimPageLink.click();
+	}
+		
+	/*
 	public void clickOnAdminPageLink()
 	{
 		adminPageLink.click();
 	}
+	*/
 }
-
-
