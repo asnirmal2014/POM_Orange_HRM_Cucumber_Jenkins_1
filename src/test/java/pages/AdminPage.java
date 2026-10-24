@@ -17,6 +17,12 @@ public class AdminPage
     	this.driver = driver;
     }
     
+    // Create the WebDriverWait once, reuse it
+    private WebDriverWait wdWait()
+    {
+        return new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
+    
     @FindBy(how = How.XPATH, using="//img[@class='oxd-userdropdown-img']") WebElement profile;
 	@FindBy(how = How.XPATH , using="//a[normalize-space()='Logout']") WebElement profilelogout;
 	
@@ -39,11 +45,5 @@ public class AdminPage
         
         WebElement we = wdWait().until(ExpectedConditions.elementToBeClickable(profilelogout));
         we.click();
-    }
-    
-    // Create the WebDriverWait once, reuse it
-    private WebDriverWait wdWait()
-    {
-        return new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 }
