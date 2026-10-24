@@ -20,7 +20,7 @@ public class AdminPage
     // Create the WebDriverWait once, reuse it
     private WebDriverWait wdWait()
     {
-        return new WebDriverWait(driver, Duration.ofSeconds(5));
+        return new WebDriverWait(driver, Duration.ofSeconds(10));
     }
     
     @FindBy(how = How.XPATH, using="//img[@class='oxd-userdropdown-img']") WebElement profile;
@@ -28,7 +28,7 @@ public class AdminPage
 	
 	public void clickOnProfile()
     {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(profile));
         profile.click();
     }
@@ -36,7 +36,7 @@ public class AdminPage
     public void clickOnProfileLogOut()
     {
 		/*
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		 wait.until(ExpectedConditions.elementToBeClickable(profilelogout));
 		 profilelogout.click();
 		*/

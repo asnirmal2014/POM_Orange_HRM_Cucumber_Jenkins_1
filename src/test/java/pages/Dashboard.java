@@ -22,6 +22,8 @@ public class Dashboard
 	
 	public void clickOnPIMPageLink()
 	{
+		WebDriverWait customWait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofMillis(500));
+		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(pimPageLink));
         pimPageLink.click();

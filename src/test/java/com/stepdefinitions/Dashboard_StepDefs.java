@@ -34,7 +34,7 @@ public class Dashboard_StepDefs
     }
 
     @When("User clicks on the PIM page icon from the Dashboard page")
-    public void user_clicks_on_the_pim_page_icon_from_the_dashboard_page()
+    public void user_clicks_on_the_pim_page_icon_from_the_dashboard_page() 
     {
         dashboard.clickOnPIMPageLink();
         System.out.println("Clicked on the PIM page icon");
