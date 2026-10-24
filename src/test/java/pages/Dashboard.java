@@ -21,6 +21,25 @@ public class Dashboard
 	
 	public void clickOnPIMPageLink()
 	{
+	    // (A) create the wait
+	    WebDriverWait customWait = new WebDriverWait(driver, Duration.ofSeconds(30), Duration.ofMillis(500));
+
+	    // (B) capture start time
+	    final long startTime = System.currentTimeMillis();
+
+	    // (C) the 10-second delay
+	    customWait.until(d -> System.currentTimeMillis() - startTime >= 10_000);
+
+	    // (D) wait for clickability, get the element back
+	    WebElement pimLink = customWait.until(ExpectedConditions.elementToBeClickable(pimPageLink));
+
+	    // (E) click
+	    pimLink.click();
+	}
+	
+	/*
+	public void clickOnPIMPageLink()
+	{
 		// Timeout 30s (must be LONGER than the 10s delay) + poll every 500ms
 		WebDriverWait customWait = new WebDriverWait(driver, Duration.ofSeconds(30), Duration.ofMillis(500));
 		
@@ -34,4 +53,5 @@ public class Dashboard
 		// STEP 3: Click the element returned by the wait
 		pimLink.click();
 	}
+	*/
 }
