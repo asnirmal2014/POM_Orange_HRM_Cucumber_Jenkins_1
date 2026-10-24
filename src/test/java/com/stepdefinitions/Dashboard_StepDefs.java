@@ -19,7 +19,7 @@ public class Dashboard_StepDefs
     public Dashboard_StepDefs()
     {
         dashboard = PageFactory.initElements(Hooks.driver, Dashboard.class);
-        wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(10));
     }
 
     @Given("User is on the Dashboard page")

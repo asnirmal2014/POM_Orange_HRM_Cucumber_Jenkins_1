@@ -24,7 +24,7 @@ public class Login_StepDefs
     {
         loginPage = PageFactory.initElements(Hooks.driver, LoginPage.class);
         dashboard = PageFactory.initElements(Hooks.driver, Dashboard.class);
-        wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(10));
     }
 
     @Given("User is on the OrangeHRM login page")
