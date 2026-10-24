@@ -34,6 +34,8 @@ public class AdminPage
 		 wait.until(ExpectedConditions.elementToBeClickable(profilelogout));
 		 profilelogout.click();
 		*/
+    	
+    	/* [OR] */
         
         WebElement we = wdWait().until(ExpectedConditions.elementToBeClickable(profilelogout));
         we.click();
