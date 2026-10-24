@@ -1,7 +1,6 @@
 package pages;
 
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,10 +21,17 @@ public class Dashboard
 	
 	public void clickOnPIMPageLink()
 	{
-		WebDriverWait customWait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofMillis(500));
+		// Timeout 30s (must be LONGER than the 10s delay) + poll every 500ms
+		WebDriverWait customWait = new WebDriverWait(driver, Duration.ofSeconds(30), Duration.ofMillis(500));
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(pimPageLink));
-        pimPageLink.click();
+		// STEP 1: Fixed 10-second delay, expressed through the wait API
+		final long startTime = System.currentTimeMillis();
+		customWait.until(d -> System.currentTimeMillis() - startTime >= 10_000);
+		
+		// STEP 2: Real condition - link must exist, be visible and be enabled
+		WebElement pimLink = customWait.until(ExpectedConditions.elementToBeClickable(pimPageLink));
+		
+		// STEP 3: Click the element returned by the wait
+		pimLink.click();
 	}
 }
