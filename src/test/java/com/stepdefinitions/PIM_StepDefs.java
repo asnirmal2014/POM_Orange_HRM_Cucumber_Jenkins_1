@@ -1,11 +1,10 @@
 package com.stepdefinitions;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import java.time.Duration;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Admin_Page;
@@ -23,9 +22,23 @@ public class PIM_StepDefs
     {
     	pimPage = PageFactory.initElements(Hooks.driver, PIM_Page.class);
         adminPage = PageFactory.initElements(Hooks.driver, Admin_Page.class);
-        // wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(10));
     }
     
+    @When("User clicks the Employee List link")
+    public void user_clicks_the_employee_list_link() 
+    {
+    	pimPage.clickOnEmpListLink();
+    	System.out.println("User clicks the Employee List link");
+    }
+    
+    @When("User clicks on the search button")
+    public void user_clicks_on_the_search_button() 
+    {
+    	pimPage.clickOnAdminPageLink();
+    	System.out.println("User clicks on the search button");
+    }
+        
     @When("User clicks on the Admin page icon from the PIM page")
     public void user_clicks_on_the_admin_page_icon_from_the_pim_page() 
     {
