@@ -9,21 +9,21 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pages.LoginPage;
-import pages.Dashboard;
+import pages.DashboardPage;
 import utility.Hooks;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Login_StepDefs
 {
     LoginPage loginPage;
-    Dashboard dashboard;
+    DashboardPage dashboard;
     WebDriverWait wait;
 
     // Page objects are initialized with the driver created by Hooks.@Before
     public Login_StepDefs()
     {
         loginPage = PageFactory.initElements(Hooks.driver, LoginPage.class);
-        dashboard = PageFactory.initElements(Hooks.driver, Dashboard.class);
+        dashboard = PageFactory.initElements(Hooks.driver, DashboardPage.class);
         wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(10));
     }
 
