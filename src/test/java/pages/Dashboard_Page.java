@@ -1,14 +1,12 @@
 package pages;
 
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import utility.WaitUtils;
 
 public class Dashboard_Page 
@@ -31,7 +29,7 @@ public class Dashboard_Page
 	
     public void clickOnPIMPageLink() 
     {
-    	WaitUtils.pause(10);   // 10 seconds
+    	WaitUtils.pause(5);   // 5 seconds
     	
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 

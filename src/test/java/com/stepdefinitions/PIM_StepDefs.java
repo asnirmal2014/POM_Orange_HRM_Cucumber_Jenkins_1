@@ -43,6 +43,14 @@ public class PIM_StepDefs
     public void user_clicks_on_the_admin_page_icon_from_the_pim_page() 
     {
         pimPage.clickOnAdminPageLink();
+
+        // Wait for the new page to load
+        wait.until(ExpectedConditions.urlContains("/admin"));
+        
+        /* StaleElementReferenceException - Just keep the waits and (optionally) re-initialize the page objects after each major navigation, and the tests will stay stable. */
+        // Re-init page object for the new page (optional but safer)
+        adminPage = PageFactory.initElements(Hooks.driver, Admin_Page.class);
+        
         System.out.println("Clicked on the Admin page icon");
     }
 

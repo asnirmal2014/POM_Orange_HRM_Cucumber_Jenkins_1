@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utility.WaitUtils;
 
 public class PIM_Page 
 {
@@ -28,6 +29,8 @@ public class PIM_Page
     
 	public void clickOnEmpListLink()
     {
+		WaitUtils.pause(5);   // 5 seconds
+		
         // WebElement webElement = wdWait().until(ExpectedConditions.elementToBeClickable(empListLink));
         // webElement.click();
         
@@ -40,6 +43,7 @@ public class PIM_Page
 	
 	public void clickOnAdminPageLink()
 	{
+		WaitUtils.pause(5);   // 5 seconds
 		WebElement webElement = wdWait().until(ExpectedConditions.elementToBeClickable(adminPageLink));
 		webElement.click();
 	}

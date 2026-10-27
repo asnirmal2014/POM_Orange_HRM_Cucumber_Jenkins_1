@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utility.WaitUtils;
 
 public class Admin_Page 
 {
@@ -28,6 +29,7 @@ public class Admin_Page
 	
 	public void clickOnProfile()
     {
+		WaitUtils.pause(5);   // 5 seconds
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(profile));
         profile.click();
@@ -35,6 +37,8 @@ public class Admin_Page
 
     public void clickOnProfileLogOut()
     {
+    	WaitUtils.pause(5);   // 5 seconds
+    	
 		/*
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		 wait.until(ExpectedConditions.elementToBeClickable(profilelogout));

@@ -14,7 +14,7 @@ public class Hooks
 {
     public static WebDriver driver = null;
 
-    // Runs ONLY ONCE before the entire suite
+    // Runs only once before the entire suite
     @BeforeAll
     public static void setUpOnce() throws InterruptedException 
     {
@@ -30,19 +30,21 @@ public class Hooks
         driver.get("https://opensource-demo.orangehrmlive.com");
         Thread.sleep(3000);
 
-        // Perform login ONLY ONCE
+        // Perform login only once
         Login_Page loginPage = PageFactory.initElements(driver, Login_Page.class);
         loginPage.setUserName("Admin");
         loginPage.setPassword("admin123");
+        
+        WaitUtils.pause(5);   // 5 seconds
+        
         loginPage.clickOnLoginButton();
 
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.urlContains("/dashboard"));
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.urlContains("/dashboard"));
 
         System.out.println("@BeforeAll : Login successful. Session will be shared across all features.");
     }
 
-    // Runs ONLY ONCE after the entire suite
+    // Runs only once after the entire suite
     @AfterAll
     public static void tearDownOnce() 
     {
