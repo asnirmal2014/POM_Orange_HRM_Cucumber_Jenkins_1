@@ -7,18 +7,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import pages.DashboardPage;
+import pages.Dashboard_Page;
 import utility.Hooks;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Dashboard_StepDefs
 {
-    DashboardPage dashboard;
+    Dashboard_Page dashboard;
     WebDriverWait wait;
 
     public Dashboard_StepDefs()
     {
-        dashboard = PageFactory.initElements(Hooks.driver, DashboardPage.class);
+        dashboard = PageFactory.initElements(Hooks.driver, Dashboard_Page.class);
         wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(10));
     }
 

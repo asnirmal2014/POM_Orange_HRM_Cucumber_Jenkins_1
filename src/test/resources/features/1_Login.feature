@@ -1,15 +1,11 @@
-# NOTE: This feature is NOT tagged with @loggedIn, because login IS the test.
-# Only the untagged @Before hook runs here (launch browser + open OrangeHRM URL).
+# Login is performed ONCE in Hooks.@BeforeAll.
+# This feature only verifies that the shared session landed on the Dashboard.
 
-Feature: OrangeHRM Login and Logout functionality
+Feature: OrangeHRM Login verification (shared session)
   As an admin user
-  I want to login to OrangeHRM
-  So that I can access the Dashboard page
-  
-  Background: User is on the OrangeHRM login page
-    Given User is on the OrangeHRM login page
+  I want to confirm that the one-time login worked
+  So that all other features can reuse the same session
 
-  Scenario: Successful login, navigate to the Dashboard page
-    When User enters username "Admin" and password "admin123"
-    And User clicks on the Login button
+  Scenario: User is already logged in and is on the Dashboard page
+    Given User is on the Dashboard page
     Then User should be navigated to the Dashboard page

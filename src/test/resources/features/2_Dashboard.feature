@@ -1,8 +1,6 @@
-# NOTE: @loggedIn tag at Feature level => the tagged @Before("@loggedIn") hook
-# performs login automatically before every scenario in this feature.
-# So the Background below only VERIFIES that login worked — it does NOT re-login.
+# Login was already done once in Hooks.@BeforeAll.
+# This feature only navigates from Dashboard → PIM using the shared session.
 
-@loggedIn
 Feature: User navigation from Dashboard page to PIM page
 
   Background: User is on the Dashboard page

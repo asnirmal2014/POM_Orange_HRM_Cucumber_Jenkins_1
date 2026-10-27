@@ -8,11 +8,11 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AdminPage 
+public class Admin_Page 
 {
 	public WebDriver driver = null;
    
-    public AdminPage(WebDriver driver) 
+    public Admin_Page(WebDriver driver) 
     {
     	this.driver = driver;
     }

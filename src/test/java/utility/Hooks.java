@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
-import pages.LoginPage;
+import pages.Login_Page;
 
 public class Hooks 
 {
@@ -31,7 +31,7 @@ public class Hooks
         Thread.sleep(3000);
 
         // Perform login ONLY ONCE
-        LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+        Login_Page loginPage = PageFactory.initElements(driver, Login_Page.class);
         loginPage.setUserName("Admin");
         loginPage.setPassword("admin123");
         loginPage.clickOnLoginButton();

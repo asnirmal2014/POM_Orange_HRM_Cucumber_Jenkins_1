@@ -9,11 +9,11 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage 
+public class Login_Page 
 {
 	public WebDriver driver = null;
    
-    public LoginPage(WebDriver driver) 
+    public Login_Page(WebDriver driver) 
     {
     	this.driver = driver;
     }
