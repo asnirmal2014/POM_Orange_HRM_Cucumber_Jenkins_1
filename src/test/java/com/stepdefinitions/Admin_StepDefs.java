@@ -1,6 +1,5 @@
 package com.stepdefinitions;
 
-import java.time.Duration;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.en.Then;
@@ -34,8 +33,8 @@ public class Admin_StepDefs
     	System.out.println("User clicks on the logout button");
     }
     
-    @Then("User should be loggedout from the application")
-    public void user_should_be_loggedout_from_the_application() 
+    @Then("User should be logged out from the application")
+    public void user_should_be_logged_out_from_the_application() 
     {
     	System.out.println("User is logged out from the application");
     }
