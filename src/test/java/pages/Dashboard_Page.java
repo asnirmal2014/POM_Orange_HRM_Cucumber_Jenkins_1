@@ -20,13 +20,15 @@ public class Dashboard_Page
 	}
 	
 	// Prefer href-based locator – unique and stable on OrangeHRM
-    @FindBy(how = How.XPATH, using = "//a[contains(@href,'/pim/viewPimModule')]") 
-    WebElement pimPageLink;
+    // @FindBy(how = How.XPATH, using = "//a[contains(@href,'/pim/viewPimModule')]") 
+    // WebElement pimPageLink;
 	
 	// [OR]
     
-    // @FindBy(how = How.XPATH, using = "//span[normalize-space()='PIM']")
-    // WebElement pimPageLink;
+    By pimLocator = By.xpath("//a[contains(@href,'/pim/viewPimModule')]");
+    // WebElement pimLink = wait.until(ExpectedConditions.elementToBeClickable(pimLocator));
+    
+    // However, using By directly with WebDriverWait is useful here because Selenium locates the element again when the wait checks its condition.
 	
     public void clickOnPIMPageLink() 
     {
@@ -35,13 +37,12 @@ public class Dashboard_Page
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         // Wait until the menu item is clickable, then click
-        WebElement pimLink = wait.until(ExpectedConditions.elementToBeClickable(pimPageLink));
+        WebElement pimLink = wait.until(ExpectedConditions.elementToBeClickable(pimLocator));
         pimLink.click();
 
         // Optional but recommended: wait until URL actually changes to PIM
-        wait.until(ExpectedConditions.urlContains("/pim"));
+        wait.until(ExpectedConditions.urlContains("/pim/"));
         
-        // Explicit Wait until the PIM page heading is visible.
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[normalize-space()='PIM']")));
         
         /*

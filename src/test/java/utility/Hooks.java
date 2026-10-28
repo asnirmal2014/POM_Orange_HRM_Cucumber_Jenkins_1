@@ -1,7 +1,6 @@
 package utility;
 
 import java.time.Duration;
-
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
 import pages.Login_Page;
@@ -51,7 +49,7 @@ public class Hooks
         loginPage.setUserName("Admin");
         loginPage.setPassword("admin123");
         
-        WaitUtils.pause(5);   // 5 seconds
+        WaitUtils.pause(2);   // 2 seconds
         
         loginPage.clickOnLoginButton();
 

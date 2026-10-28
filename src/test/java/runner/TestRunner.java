@@ -1,18 +1,18 @@
 package runner;
 
+import io.cucumber.junit.platform.engine.Constants;
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectClasspathResource;
 import org.junit.platform.suite.api.Suite;
-import io.cucumber.junit.platform.engine.Constants;
 
 @Suite
 @IncludeEngines("cucumber")
 //@SelectPackages("features")
 @SelectClasspathResource("features/1_Login.feature")
 @SelectClasspathResource("features/2_Dashboard.feature")
-@SelectClasspathResource("features/3_Admin.feature")
-@SelectClasspathResource("features/4_PIM.feature")
+@SelectClasspathResource("features/3_PIM.feature")
+@SelectClasspathResource("features/4_Admin.feature")
 @SelectClasspathResource("features/5_Leave.feature")
 @SelectClasspathResource("features/6_Time.feature")
 @SelectClasspathResource("features/7_Recruitment.feature")
@@ -30,6 +30,7 @@ import io.cucumber.junit.platform.engine.Constants;
 //@ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME, value = "true") => When dry-run is false, Cucumber tries to execute the tests live, sees that the step definitions are missing, and skips them. Once you have pasted and saved your step definitions, make sure to change dry-run back to false so your actual automated tests can run.
 //@ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME, value = "false") => When dry-run is false, Cucumber tries to execute the tests live, sees that the step definitions are missing, and skips them. Once you have pasted and saved your step definitions, make sure to change dry-run back to false so your actual automated tests can run.
 @ConfigurationParameter(key = Constants.ANSI_COLORS_DISABLED_PROPERTY_NAME, value = "false")
+@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "not @logout")
 //@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@tag and @tag1")
 //@ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@sanity or @regression or @critical")
 public class TestRunner 
