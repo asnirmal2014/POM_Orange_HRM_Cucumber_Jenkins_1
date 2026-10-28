@@ -25,8 +25,6 @@ public class Dashboard_StepDefs
     @Given("User is on the Dashboard page")
     public void user_is_on_the_dashboard_page()
     {
-        // The @loggedIn tagged Hook already performed login before this step runs.
-        // This step is a precondition assertion — it does NOT log in again.
         wait.until(ExpectedConditions.urlContains("/dashboard"));
         String currentUrl = Hooks.driver.getCurrentUrl();
         System.out.println("On Dashboard? URL = " + currentUrl);

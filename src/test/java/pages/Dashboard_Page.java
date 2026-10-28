@@ -1,6 +1,7 @@
 package pages;
 
 import java.time.Duration;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,6 +40,9 @@ public class Dashboard_Page
 
         // Optional but recommended: wait until URL actually changes to PIM
         wait.until(ExpectedConditions.urlContains("/pim"));
+        
+        // Explicit Wait until the PIM page heading is visible.
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[normalize-space()='PIM']")));
         
         /*
         pimLink.click() does not transfer control of your Java program to the browser page.

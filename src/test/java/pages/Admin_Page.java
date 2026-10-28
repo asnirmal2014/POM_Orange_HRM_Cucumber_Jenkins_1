@@ -23,31 +23,4 @@ public class Admin_Page
     {
         return new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-    
-    @FindBy(how = How.XPATH, using="//img[@class='oxd-userdropdown-img']") WebElement profile;
-	@FindBy(how = How.XPATH , using="//a[normalize-space()='Logout']") WebElement profilelogout;
-	
-	public void clickOnProfile()
-    {
-		WaitUtils.pause(5);   // 5 seconds
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(profile));
-        profile.click();
-    }
-
-    public void clickOnProfileLogOut()
-    {
-    	WaitUtils.pause(5);   // 5 seconds
-    	
-		/*
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		 wait.until(ExpectedConditions.elementToBeClickable(profilelogout));
-		 profilelogout.click();
-		*/
-    	
-    	/* [OR] */
-        
-        WebElement we = wdWait().until(ExpectedConditions.elementToBeClickable(profilelogout));
-        we.click();
-    }
 }
