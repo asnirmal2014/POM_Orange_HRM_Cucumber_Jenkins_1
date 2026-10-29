@@ -26,9 +26,7 @@ public class Dashboard_Page
 	// [OR]
     
     By pimLocator = By.xpath("//a[contains(@href,'/pim/viewPimModule')]");
-    // WebElement pimLink = wait.until(ExpectedConditions.elementToBeClickable(pimLocator));
-    
-    // However, using By directly with WebDriverWait is useful here because Selenium locates the element again when the wait checks its condition.
+    // However, using 'By' directly with WebDriverWait is useful here because Selenium locates the element again when the wait checks its condition.
 	
     public void clickOnPIMPageLink() 
     {
