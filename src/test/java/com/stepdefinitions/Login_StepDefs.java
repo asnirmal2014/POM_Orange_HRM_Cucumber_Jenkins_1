@@ -10,6 +10,7 @@ import io.cucumber.java.en.When;
 import pages.Login_Page;
 import utility.DriverManager;
 
+/* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Login_StepDefs 
 {
 	private WebDriver driver;

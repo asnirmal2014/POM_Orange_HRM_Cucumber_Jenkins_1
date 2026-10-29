@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Login_Page 
 {
     private WebDriver driver;
