@@ -12,6 +12,7 @@ import pages.Dashboard_Page;
 import utility.DriverManager;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Dashboard_StepDefs
 {
     Dashboard_Page dashboard;

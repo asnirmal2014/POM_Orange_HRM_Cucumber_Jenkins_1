@@ -10,7 +10,7 @@ import org.junit.platform.suite.api.Suite;
 @IncludeEngines("cucumber")
 //@SelectPackages("features")
 @SelectClasspathResource("features/1_Login.feature")
-//@SelectClasspathResource("features/2_Dashboard.feature")
+@SelectClasspathResource("features/2_Dashboard.feature")
 //@SelectClasspathResource("features/3_PIM.feature")
 //@SelectClasspathResource("features/4_Admin.feature")
 //@SelectClasspathResource("features/5_Leave.feature")

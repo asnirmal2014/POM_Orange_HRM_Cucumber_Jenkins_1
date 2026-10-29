@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.WaitUtils;
 
+/* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Dashboard_Page 
 {
 	public WebDriver driver = null;
