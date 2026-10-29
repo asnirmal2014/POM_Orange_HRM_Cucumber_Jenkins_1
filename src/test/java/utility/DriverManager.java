@@ -9,11 +9,6 @@ public class DriverManager
 {
     private static WebDriver driver;
 
-    public static WebDriver getDriver() 
-    {
-        return driver;
-    }
-
     public static void startBrowser() 
     {
         if (driver == null) 
@@ -25,6 +20,11 @@ public class DriverManager
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
             driver.manage().deleteAllCookies();
         }
+    }
+    
+    public static WebDriver getDriver() 
+    {
+        return driver;
     }
 
     public static void closeBrowser() 

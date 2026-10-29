@@ -14,22 +14,22 @@ public class Login_StepDefs
 {
 	private WebDriver driver;
 	private Login_Page loginPage;
-
+	
 	@Given("User opens the OrangeHRM login page")
-	public void user_opens_the_orangehrm_login_page() 
+	public void user_opens_the_orange_hrm_login_page() 
 	{
 		DriverManager.startBrowser();
 		driver = DriverManager.getDriver();
 		loginPage = PageFactory.initElements(driver, Login_Page.class);
 		loginPage.openLoginPage();
 	}
-
+	
 	@When("User enters valid credentials and clicks Login")
 	public void user_enters_valid_credentials_and_clicks_login() 
 	{
 		loginPage.login("Admin", "admin123");
 	}
-
+	
 	@Then("User should be navigated to the Dashboard page")
 	public void user_should_be_navigated_to_the_dashboard_page() 
 	{
