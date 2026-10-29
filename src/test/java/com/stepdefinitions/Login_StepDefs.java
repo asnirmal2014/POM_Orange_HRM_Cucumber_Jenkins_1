@@ -1,64 +1,41 @@
+
 package com.stepdefinitions;
 
-import java.time.Duration;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import pages.Login_Page;
-import pages.Dashboard_Page;
-import utility.Hooks;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.Login_Page;
+import utility.DriverManager;
 
-public class Login_StepDefs
+public class Login_StepDefs 
 {
-    Login_Page loginPage;
-    Dashboard_Page dashboard;
-    WebDriverWait wait;
+	private WebDriver driver;
+	private Login_Page loginPage;
 
-    // Page objects are initialized with the driver created by Hooks.@Before
-    public Login_StepDefs()
-    {
-        loginPage = PageFactory.initElements(Hooks.driver, Login_Page.class);
-        dashboard = PageFactory.initElements(Hooks.driver, Dashboard_Page.class);
-        wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(10));
-    }
+	@Given("User opens the OrangeHRM login page")
+	public void user_opens_the_orangehrm_login_page() 
+	{
+		DriverManager.startBrowser();
+		driver = DriverManager.getDriver();
+		loginPage = PageFactory.initElements(driver, Login_Page.class);
+		loginPage.openLoginPage();
+	}
 
-    @Given("User is on the OrangeHRM login page")
-    public void user_is_on_the_orange_hrm_login_page()
-    {
-        // Hooks.@Before already launched the browser and opened OrangeHRM URL.
-        // This step just verifies we landed on the login page.
-        wait.until(ExpectedConditions.urlContains("/auth/login"));
-        String currentUrl = Hooks.driver.getCurrentUrl();
-        System.out.println("Current URL: " + currentUrl);
-        assertTrue(currentUrl.contains("/auth/login"), "User is NOT on the OrangeHRM login page. URL = " + currentUrl);
-    }
+	@When("User enters valid credentials and clicks Login")
+	public void user_enters_valid_credentials_and_clicks_login() 
+	{
+		loginPage.login("Admin", "admin123");
+	}
 
-    @When("User enters username {string} and password {string}")
-    public void user_enters_username_and_password(String username, String password)
-    {
-        loginPage.setUserName(username);
-        loginPage.setPassword(password);
-        System.out.println("Entered credentials: username = " + username);
-    }
+	@Then("User should be navigated to the Dashboard page")
+	public void user_should_be_navigated_to_the_dashboard_page() 
+	{
+		assertTrue(loginPage.isDashboardDisplayed(), "Login failed: Dashboard page was not displayed.");
 
-    @And("User clicks on the Login button")
-    public void user_clicks_on_the_login_button()
-    {
-        loginPage.clickOnLoginButton();
-        System.out.println("Clicked on the Login button");
-    }
-
-    @Then("User should be navigated to the Dashboard page")
-    public void user_should_be_navigated_to_the_dashboard_page()
-    {
-        wait.until(ExpectedConditions.urlContains("/dashboard"));
-        String currentUrl = Hooks.driver.getCurrentUrl();
-        System.out.println("Login is successful. After login URL: " + currentUrl);
-        assertTrue(currentUrl.contains("/dashboard"), "User is NOT on the Dashboard page. URL = " + currentUrl);
-    }
+		System.out.println("Login successful.");
+		System.out.println("Current URL: " + driver.getCurrentUrl());
+	}
 }
