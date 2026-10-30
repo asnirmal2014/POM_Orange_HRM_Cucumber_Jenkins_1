@@ -28,8 +28,14 @@ public class Admin_Page
     }
     
     By usermgmtLinkLocator = By.xpath("//span[contains(@class,'oxd-topbar-body-nav-tab-item') and normalize-space()='User Management']");
-    By jobLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='User Management']");
-	By buzzLinkLocator = By.xpath("//span[contains(@class,'oxd-text oxd-text--span oxd-main-menu-item--name') and normalize-space()='Buzz']");
+    By jobLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Job']");
+    By organizationLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Organization']");
+    By qualificationsLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Qualifications']");
+    By nationalitiesLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Nationalities']");
+    By corporatebankingLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Corporate Banking']");
+    By configurationLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Configuration']");
+    
+    By buzzLinkLocator = By.xpath("//span[contains(@class,'oxd-text oxd-text--span oxd-main-menu-item--name') and normalize-space()='Buzz']");
         
 	public void clickOnUserMgmt()
     {
@@ -42,6 +48,56 @@ public class Admin_Page
         WebElement usermgmtLink = wait.until(ExpectedConditions.elementToBeClickable(usermgmtLinkLocator));
         usermgmtLink.click();
     }
+	
+	public void clickOnJob()
+	{
+		WaitUtils.pause(5);   // 5 seconds
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement jobLink = wait.until(ExpectedConditions.elementToBeClickable(jobLinkLocator));
+        jobLink.click();
+	}
+	
+	public void clickOnOrganization()
+	{
+		WaitUtils.pause(5);   // 5 seconds
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement organizationLink = wait.until(ExpectedConditions.elementToBeClickable(organizationLinkLocator));
+		organizationLink.click();
+	}
+	
+	public void clickOnQualifications()
+	{
+		WaitUtils.pause(5);   // 5 seconds
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement qualificationsLink = wait.until(ExpectedConditions.elementToBeClickable(qualificationsLinkLocator));
+		qualificationsLink.click();
+	}
+	
+	public void clickOnNationalities()
+	{
+		WaitUtils.pause(5);   // 5 seconds
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement nationalitiesLink = wait.until(ExpectedConditions.elementToBeClickable(nationalitiesLinkLocator));
+		nationalitiesLink.click();
+	}
+	
+	public void clickOnCorporateBanking()
+	{
+		WaitUtils.pause(5);   // 5 seconds
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement corporatebankingLink = wait.until(ExpectedConditions.elementToBeClickable(corporatebankingLinkLocator));
+		corporatebankingLink.click();
+	}
+	
+	public void clickOnConfiguration()
+	{
+		WaitUtils.pause(5);   // 5 seconds
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement configurationLink = wait.until(ExpectedConditions.elementToBeClickable(configurationLinkLocator));
+		configurationLink.click();
+	}
+	
+	
 	
 	public void clickOnBuzzPageLink()
 	{

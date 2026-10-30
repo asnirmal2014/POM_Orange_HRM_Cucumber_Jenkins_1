@@ -37,38 +37,46 @@ public class Admin_StepDefs
     @When("the user clicks the Job link")
     public void the_user_clicks_the_job_link() 
     {
+    	adminPage.clickOnJob();
     	System.out.println("User clicks the Job link");
     }
     
     @When("the user clicks the Organization link")
     public void the_user_clicks_the_organization_link() 
     {
+    	adminPage.clickOnOrganization();
     	System.out.println("User clicks the Organization link");
     }
     
     @When("the user clicks the Qualifications link")
     public void the_user_clicks_the_qualifications_link() 
     {
+    	adminPage.clickOnQualifications();
     	System.out.println("User clicks the Qualifications link");
     }
     
     @When("the user clicks the Nationalities link")
     public void the_user_clicks_the_nationalities_link() 
     {
+    	adminPage.clickOnNationalities();
     	System.out.println("User clicks the Nationalities link");
     }
     
     @When("the user clicks the Corporate Banking link")
     public void the_user_clicks_the_corporate_banking_link() 
     {
+    	adminPage.clickOnCorporateBanking();
     	System.out.println("User clicks the Corporate Banking link");
     }
     
     @When("the user clicks the Configuration link")
     public void the_user_clicks_the_configuration_link() 
     {
+    	adminPage.clickOnConfiguration();
     	System.out.println("User clicks the Configuration link");
     }
+
+    
     
     @When("User clicks on the Buzz page icon from the Admin page")
     public void user_clicks_on_the_Buzz_page_icon_from_the_Admin_page() 
