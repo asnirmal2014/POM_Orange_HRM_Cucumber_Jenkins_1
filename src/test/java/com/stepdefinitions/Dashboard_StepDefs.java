@@ -15,15 +15,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Dashboard_StepDefs
 {
-    Dashboard_Page dashboard;
-    WebDriver driver;
-    WebDriverWait wait;
+    public WebDriver driver = null;
+    public WebDriverWait wait = null;
+    public Dashboard_Page dashboard;
 
     public Dashboard_StepDefs()
     {
     	driver = DriverManager.getDriver();
-        dashboard = PageFactory.initElements(driver, Dashboard_Page.class);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	dashboard = PageFactory.initElements(driver, Dashboard_Page.class);
     }
 
     @Given("User is on the Dashboard page")

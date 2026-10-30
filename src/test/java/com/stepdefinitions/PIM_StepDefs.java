@@ -14,16 +14,16 @@ import utility.DriverManager;
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class PIM_StepDefs
 {
-	public PIM_Page pimPage = null;
 	public WebDriver driver = null;
     public WebDriverWait wait = null;
+    public PIM_Page pimPage = null;
     
     // Page objects are initialized with the driver created by Hooks.@Before
     public PIM_StepDefs()
     {
     	driver = DriverManager.getDriver();
+    	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	pimPage = PageFactory.initElements(driver, PIM_Page.class);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
     
     @When("User clicks the Employee List link")

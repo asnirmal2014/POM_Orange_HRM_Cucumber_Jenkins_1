@@ -14,6 +14,7 @@ import utility.WaitUtils;
 public class Dashboard_Page 
 {
 	public WebDriver driver = null;
+	public WebDriverWait wait = null;
 	
 	public Dashboard_Page(WebDriver driver)
 	{

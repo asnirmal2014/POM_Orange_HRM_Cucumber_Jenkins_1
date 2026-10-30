@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Login_Page 
 {
-    private WebDriver driver;
-    private WebDriverWait wait;
+	public WebDriver driver = null;
+	public WebDriverWait wait = null;
 
     public Login_Page(WebDriver driver) 
     {
