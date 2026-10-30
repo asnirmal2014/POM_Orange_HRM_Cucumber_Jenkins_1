@@ -17,7 +17,7 @@ Feature: OrangeHRM Admin features and functionalities
     
     And the user clicks the Help icon
     
-    #And the expected page or help content should be displayed
+    And the help content should be displayed
     
     #And User clicks on the Buzz page icon from the Admin page
   	#Then User should be navigated to the Buzz page

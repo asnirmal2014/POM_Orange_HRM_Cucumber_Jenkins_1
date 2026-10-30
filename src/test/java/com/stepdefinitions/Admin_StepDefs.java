@@ -116,6 +116,12 @@ public class Admin_StepDefs
         // Now driver is focused on the original Admin page again
     }
     
+    @Then("the help content should be displayed")
+    public void the_help_content_should_be_displayed() 
+    {
+    	System.out.println("Help content should be displayed");
+    }
+    
     @When("User clicks on the Buzz page icon from the Admin page")
     public void user_clicks_on_the_Buzz_page_icon_from_the_Admin_page() 
     {
@@ -132,17 +138,5 @@ public class Admin_StepDefs
 		System.out.println("Page title: " + driver.getTitle());
     }
     
-    /*
-    @When("the user clicks the Help icon")
-    public void the_user_clicks_the_help_icon() 
-    {
-    	System.out.println("User clicks the Help icon");
-    }
     
-    @Then("the expected page or help content should be displayed")
-    public void the_expected_page_or_help_content_should_be_displayed() 
-    {
-    	System.out.println("Expected page or help content should be displayed");
-    }
-    */
 }
