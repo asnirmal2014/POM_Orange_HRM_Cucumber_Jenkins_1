@@ -1,12 +1,13 @@
 package com.stepdefinitions;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import io.cucumber.java.en.Given;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Admin_Page;
@@ -80,8 +81,8 @@ public class Admin_StepDefs
     @When("the user clicks the Help icon")
     public void the_user_clicks_the_Help_icon()
     {
-    	//adminPage.clickOnHelpIcon();
-    	//System.out.println("User clicks the Help icon");
+    	// adminPage.clickOnHelpIcon();
+    	// System.out.println("User clicks the Help icon");
     	// The control should come back to the same page. 
     	
     	// 1. Store the current (original) window handle
@@ -91,8 +92,38 @@ public class Admin_StepDefs
         adminPage.clickOnHelpIcon();
         System.out.println("User clicks the Help icon");
         
-        WaitUtils.pause(25);   // 25 seconds
+        // WaitUtils.pause(25);   // 25 seconds
         
+        // Wait properly for the new tab instead of a blind 25s sleep
+        /*    
+        Both ds are the same thing — the WebDriver instance.
+        First d (before ->) is the lambda parameter — the input variable the lambda declares.
+        Second d (after ->) is that same variable being used in the body to call getWindowHandles().
+        */
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(d -> d.getWindowHandles().size() > 1);
+
+        // Switch to the Help tab
+        // Wait for the new window/tab to open and switch
+        String helpWindow = null;
+        for (String handle : driver.getWindowHandles()) 
+        {
+            if (!handle.equals(originalWindow)) 
+            {
+                helpWindow = handle;
+                driver.switchTo().window(handle);
+                break;
+            }
+        }
+
+        // NOW the scroll actually hits the Help page
+        JavascriptExecutor jse = (JavascriptExecutor) driver;                           // Downcasting or Sidecasting       
+		jse.executeScript("window.scrollBy(0,1450)", "");    // Width and Height        // Scroll Down
+		// jse.executeScript("window.scrollBy(0,-350)", ""); // Up Width and Up Height  // Scroll Up
+		// jse.executeScript("window.scrollBy(0, document.body.scrollHeight)");         // Scroll Down to the bottom of the Web Page
+
+		WaitUtils.pause(25);   // 25 seconds
+		
         /*
         We can close the new 'Help' page.
         Wait a moment for the new tab to open (optional but safer)
