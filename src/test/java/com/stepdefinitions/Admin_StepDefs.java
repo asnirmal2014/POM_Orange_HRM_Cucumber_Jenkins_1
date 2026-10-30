@@ -11,6 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Admin_Page;
 import utility.DriverManager;
+import utility.WaitUtils;
 
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Admin_StepDefs
@@ -62,11 +63,11 @@ public class Admin_StepDefs
     	System.out.println("User clicks the Nationalities link");
     }
     
-    @When("the user clicks the Corporate Banking link")
-    public void the_user_clicks_the_corporate_banking_link() 
+    @When("the user clicks the Corporate Branding link")
+    public void the_user_clicks_the_corporate_branding_link() 
     {
-    	adminPage.clickOnCorporateBanking();
-    	System.out.println("User clicks the Corporate Banking link");
+    	adminPage.clickOnCorporateBranding();
+    	System.out.println("User clicks the Corporate Branding link");
     }
     
     @When("the user clicks the Configuration link")
@@ -76,7 +77,44 @@ public class Admin_StepDefs
     	System.out.println("User clicks the Configuration link");
     }
 
-    
+    @When("the user clicks the Help icon")
+    public void the_user_clicks_the_Help_icon()
+    {
+    	//adminPage.clickOnHelpIcon();
+    	//System.out.println("User clicks the Help icon");
+    	// The control should come back to the same page. 
+    	
+    	// 1. Store the current (original) window handle
+        String originalWindow = driver.getWindowHandle();
+
+        // 2. Click the Help icon (this opens a new tab)
+        adminPage.clickOnHelpIcon();
+        System.out.println("User clicks the Help icon");
+        
+        WaitUtils.pause(25);   // 25 seconds
+        
+        /*
+        We can close the new 'Help' page.
+        Wait a moment for the new tab to open (optional but safer)
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d -> d.getWindowHandles().size() > 1);
+        */
+        
+        // Switch to the new tab, do something if needed, then close the newly opened tab
+        for (String windowHandle : driver.getWindowHandles()) 
+    	{
+            if (!windowHandle.equals(originalWindow)) 
+    		{
+                driver.switchTo().window(windowHandle);
+                // Optional: verify help page title/url here
+                driver.close();               // close the Help tab
+                break;
+            }
+        }
+
+        // 3. Switch back to the original window
+        driver.switchTo().window(originalWindow);
+        // Now driver is focused on the original Admin page again
+    }
     
     @When("User clicks on the Buzz page icon from the Admin page")
     public void user_clicks_on_the_Buzz_page_icon_from_the_Admin_page() 

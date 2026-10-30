@@ -31,13 +31,14 @@ public class Admin_Page
     By jobLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Job']");
     By organizationLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Organization']");
     By qualificationsLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Qualifications']");
-    By nationalitiesLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Nationalities']");
-    By corporatebankingLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Corporate Banking']");
+    By nationalitiesLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Nationalities']");
+    By corporatebrandingLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Corporate Branding']");
     By configurationLinkLocator = By.xpath("//span[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Configuration']");
-    
-    By buzzLinkLocator = By.xpath("//span[contains(@class,'oxd-text oxd-text--span oxd-main-menu-item--name') and normalize-space()='Buzz']");
+    By helpIconLocator = By.xpath("//i[@class='oxd-icon bi-question-lg']");
         
-	public void clickOnUserMgmt()
+    By buzzLinkLocator = By.xpath("//span[contains(@class,'oxd-text oxd-text--span oxd-main-menu-item--name') and normalize-space()='Buzz']");
+
+    public void clickOnUserMgmt()
     {
 		// No need to use the System.out.println().
 		//System.out.println("@Current URL: " + driver.getCurrentUrl());
@@ -81,12 +82,12 @@ public class Admin_Page
 		nationalitiesLink.click();
 	}
 	
-	public void clickOnCorporateBanking()
+	public void clickOnCorporateBranding()
 	{
 		WaitUtils.pause(5);   // 5 seconds
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement corporatebankingLink = wait.until(ExpectedConditions.elementToBeClickable(corporatebankingLinkLocator));
-		corporatebankingLink.click();
+		WebElement corporatebrandingLink = wait.until(ExpectedConditions.elementToBeClickable(corporatebrandingLinkLocator));
+		corporatebrandingLink.click();
 	}
 	
 	public void clickOnConfiguration()
@@ -97,7 +98,13 @@ public class Admin_Page
 		configurationLink.click();
 	}
 	
-	
+	public void clickOnHelpIcon()
+	{
+		WaitUtils.pause(5);   // 5 seconds
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement helpIconLink = wait.until(ExpectedConditions.elementToBeClickable(helpIconLocator));
+		helpIconLink.click();
+	}
 	
 	public void clickOnBuzzPageLink()
 	{
