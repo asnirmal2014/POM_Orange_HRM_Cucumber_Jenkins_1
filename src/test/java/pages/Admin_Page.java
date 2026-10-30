@@ -33,11 +33,11 @@ public class Admin_Page
         
 	public void clickOnUserMgmt()
     {
+		// No need to use the System.out.println().
+		//System.out.println("@Current URL: " + driver.getCurrentUrl());
+		//System.out.println("@Page title: " + driver.getTitle());
+
 		WaitUtils.pause(5);   // 5 seconds
-		
-		System.out.println("Current URL: " + driver.getCurrentUrl());
-		System.out.println("Page title: " + driver.getTitle());
-		
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement usermgmtLink = wait.until(ExpectedConditions.elementToBeClickable(usermgmtLinkLocator));
         usermgmtLink.click();
@@ -45,14 +45,9 @@ public class Admin_Page
 	
 	public void clickOnBuzzPageLink()
 	{
-		WaitUtils.pause(10);   // 5 seconds
-		
-		System.out.println("Current URL: " + driver.getCurrentUrl());
-		System.out.println("Page title: " + driver.getTitle());
-		
+		WaitUtils.pause(5);   // 5 seconds
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement buzzpageLink = wait.until(ExpectedConditions.elementToBeClickable(buzzLinkLocator));
 		buzzpageLink.click();
 	}
 }
-

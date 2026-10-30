@@ -1,9 +1,7 @@
 package com.stepdefinitions;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -83,6 +81,9 @@ public class Admin_StepDefs
     {
     	//https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz
     	wait.until(ExpectedConditions.urlContains("/buzz/"));
+    	
+    	System.out.println("Current URL: " + driver.getCurrentUrl());
+		System.out.println("Page title: " + driver.getTitle());
     }
     
     /*
