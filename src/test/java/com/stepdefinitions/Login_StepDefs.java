@@ -35,7 +35,6 @@ public class Login_StepDefs
 	public void user_should_be_navigated_to_the_dashboard_page() 
 	{
 		assertTrue(loginPage.isDashboardDisplayed(), "Login failed: Dashboard page was not displayed.");
-
 		System.out.println("Login successful.");
 		System.out.println("Current URL: " + driver.getCurrentUrl());
 	}

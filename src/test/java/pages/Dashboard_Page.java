@@ -40,9 +40,8 @@ public class Dashboard_Page
         pimLink.click();
 
         // Optional but recommended: wait until URL actually changes to PIM
-        wait.until(ExpectedConditions.urlContains("/pim/"));
-        
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[normalize-space()='PIM']")));
+        // wait.until(ExpectedConditions.urlContains("/pim/"));
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[normalize-space()='PIM']")));
         
         /*
         pimLink.click() does not transfer control of your Java program to the browser page.

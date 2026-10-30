@@ -39,9 +39,7 @@ public class Dashboard_StepDefs
     public void user_clicks_on_the_pim_page_icon_from_the_dashboard_page() 
     {
         dashboard.clickOnPIMPageLink();
-        
-        // Wait for the new page to load
-        wait.until(ExpectedConditions.urlContains("/admin/"));
+        wait.until(ExpectedConditions.urlContains("/pim/"));
         System.out.println("Clicked on the PIM page icon");
     }
 

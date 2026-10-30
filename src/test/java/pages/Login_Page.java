@@ -25,7 +25,6 @@ public class Login_Page
     public void openLoginPage() 
     {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(username));
     }
 

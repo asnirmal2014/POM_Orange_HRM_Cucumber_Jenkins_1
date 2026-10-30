@@ -2,7 +2,6 @@ package com.stepdefinitions;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,9 +14,9 @@ import utility.DriverManager;
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class PIM_StepDefs
 {
-	PIM_Page pimPage;
-	WebDriver driver;
-    WebDriverWait wait;
+	public PIM_Page pimPage = null;
+	public WebDriver driver = null;
+    public WebDriverWait wait = null;
     
     // Page objects are initialized with the driver created by Hooks.@Before
     public PIM_StepDefs()
@@ -38,9 +37,7 @@ public class PIM_StepDefs
     public void user_clicks_on_the_admin_page_icon_from_the_pim_page() 
     {
         pimPage.clickOnAdminPageLink();
-
-        // Wait for the new page to load
-        wait.until(ExpectedConditions.urlContains("/admin/"));
+        wait.until(ExpectedConditions.urlContains("/admin/")); // Wait for the new page to load
         System.out.println("Clicked on the Admin page icon");
     }
 

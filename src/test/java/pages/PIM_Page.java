@@ -13,6 +13,7 @@ import utility.WaitUtils;
 public class PIM_Page 
 {
 	public WebDriver driver = null;
+	public WebDriverWait wait = null;
    
     public PIM_Page(WebDriver driver) 
     {
@@ -48,6 +49,5 @@ public class PIM_Page
 		
 		WebElement webElement = wdWait().until(ExpectedConditions.elementToBeClickable(adminPageLink));
 		webElement.click();
-		wdWait().until(ExpectedConditions.urlContains("/admin/"));
 	}
 }
