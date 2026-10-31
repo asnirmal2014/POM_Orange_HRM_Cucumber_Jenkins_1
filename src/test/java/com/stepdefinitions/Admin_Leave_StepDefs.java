@@ -46,13 +46,15 @@ public class Admin_Leave_StepDefs
     @When("the Admin clicks the My Leave link")
     public void the_admin_clicks_the_my_leave_link() 
     {
-
+    	adminLeavePage.clickOnAdminMyLeaveLink();
+    	System.out.println("Admin clicks the My Leave link");
     }
     
     @When("the Admin clicks the Entitlement link")
     public void the_admin_clicks_the_entitlement_link() 
     {
-
+    	adminLeavePage.clickOnAdminEntitlementsLink();
+    	System.out.println("Admin clicks the Entitlement link");
     }
     
     @When("the Admin clicks the Reports link")

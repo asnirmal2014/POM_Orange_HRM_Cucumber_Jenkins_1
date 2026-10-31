@@ -29,6 +29,9 @@ public class Admin_Leave_Page
     
     By adminLeaveSideMenuLinkLocator = By.xpath("//span[contains(@class,'oxd-text oxd-text--span oxd-main-menu-item--name') and normalize-space()='Leave']");
     By adminApplyLeaveLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Apply']");
+    By adminMyLeaveLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='My Leave']");
+    By adminEntitlementsLinkLocator = By.xpath("//span[contains(@class,'oxd-text oxd-text--span oxd-main-menu-item--name') and normalize-space()='Entitlements']");
+     
     
     public void clickOnAdminLeaveSideMenu()
     {
@@ -44,6 +47,22 @@ public class Admin_Leave_Page
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement adminApplyLeaveLink = wait.until(ExpectedConditions.elementToBeClickable(adminApplyLeaveLinkLocator));
         adminApplyLeaveLink.click();
+    }
+    
+    public void clickOnAdminMyLeaveLink()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminMyLeaveLink = wait.until(ExpectedConditions.elementToBeClickable(adminMyLeaveLinkLocator));
+        adminMyLeaveLink.click();
+    }
+    
+    public void clickOnAdminEntitlementsLink()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminEntitlementsLink = wait.until(ExpectedConditions.elementToBeClickable(adminEntitlementsLinkLocator));
+        adminEntitlementsLink.click();
     }
     
     
