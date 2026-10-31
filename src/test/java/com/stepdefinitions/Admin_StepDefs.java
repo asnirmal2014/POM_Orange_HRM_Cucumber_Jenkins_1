@@ -122,7 +122,8 @@ public class Admin_StepDefs
 		// jse.executeScript("window.scrollBy(0,-350)", ""); // Up Width and Up Height  // Scroll Up
 		// jse.executeScript("window.scrollBy(0, document.body.scrollHeight)");         // Scroll Down to the bottom of the Web Page
 
-		WaitUtils.pause(25);   // 25 seconds
+		WaitUtils.pause(5);    // 5 seconds
+		// WaitUtils.pause(25);   // 25 seconds
 		
         /*
         We can close the new 'Help' page.
