@@ -67,18 +67,21 @@ public class Admin_Leave_StepDefs
     @When("the Admin clicks the Configure link")
     public void the_admin_clicks_the_configure_link() 
     {
-
+    	adminLeavePage.clickOnAdminConfigureLink();
+    	System.out.println("Admin clicks the Configure link");
     }
     
     @When("the Admin clicks the Leave List link")
     public void the_admin_clicks_the_leave_list_link() 
     {
-
+    	adminLeavePage.clickOnAdminLeaveListLink();
+    	System.out.println("Admin clicks the Leave List link");
     }
     
     @When("the Admin clicks the Assign Leave link")
     public void the_admin_clicks_the_assign_leave_link() 
     {
-
+    	adminLeavePage.clickOnAdminAssignLeaveLink();
+    	System.out.println("Admin clicks the Assign Leave link");
     }
 }

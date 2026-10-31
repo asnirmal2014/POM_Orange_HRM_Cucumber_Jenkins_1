@@ -32,6 +32,9 @@ public class Admin_Leave_Page
     By adminMyLeaveLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='My Leave']");
     By adminEntitlementsLinkLocator = By.xpath("//span[contains(@class,'oxd-topbar-body-nav-tab-item') and normalize-space()='Entitlements']");
     By adminReportsLinkLocator = By.xpath("//span[contains(@class,'oxd-topbar-body-nav-tab-item') and normalize-space()='Reports']");
+    By adminConfigureLinkLocator = By.xpath("//span[contains(@class,'oxd-topbar-body-nav-tab-item') and normalize-space()='Configure']");
+    By adminLeaveListLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Leave List']");
+    By adminAssignLeaveLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Assign Leave']");
     
     public void clickOnAdminLeaveSideMenu()
     {
@@ -71,5 +74,29 @@ public class Admin_Leave_Page
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement adminReportsLink = wait.until(ExpectedConditions.elementToBeClickable(adminReportsLinkLocator));
         adminReportsLink.click();
+    }
+    
+    public void clickOnAdminConfigureLink()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminConfigureLink = wait.until(ExpectedConditions.elementToBeClickable(adminConfigureLinkLocator));
+        adminConfigureLink.click();
+    }
+    
+    public void clickOnAdminLeaveListLink()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminLeaveListLink = wait.until(ExpectedConditions.elementToBeClickable(adminLeaveListLinkLocator));
+        adminLeaveListLink.click();
+    }
+    
+    public void clickOnAdminAssignLeaveLink()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminAssignLeaveLink = wait.until(ExpectedConditions.elementToBeClickable(adminAssignLeaveLinkLocator));
+        adminAssignLeaveLink.click();
     }
 }
