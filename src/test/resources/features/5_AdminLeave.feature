@@ -1,7 +1,9 @@
 Feature: OrangeHRM Admin Leave Process
 
   Scenario: Navigate through all features of Admin Leave Process
-    When the Admin clicks Apply link
+    When the Admin clicks on the Leave menu the Leave page opens
+    
+    And the Admin clicks Apply Leave link
     
     And the Admin clicks the My Leave link
     

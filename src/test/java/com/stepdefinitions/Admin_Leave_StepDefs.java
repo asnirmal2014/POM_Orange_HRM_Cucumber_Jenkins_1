@@ -29,5 +29,53 @@ public class Admin_Leave_StepDefs
     	adminLeavePage = PageFactory.initElements(driver, Admin_Leave_Page.class);
     }
     
+    @When("the Admin clicks on the Leave menu the Leave page opens")
+    public void the_admin_clicks_on_the_leave_menu_the_leave_page_opens() 
+    {
+    	adminLeavePage.clickOnAdminLeaveSideMenu();
+    	System.out.println("Admin clicks on the Leave menu the Leave page opens");
+    }
     
+    @When("the Admin clicks Apply Leave link")
+    public void the_admin_clicks_apply_leave_link() 
+    {
+    	adminLeavePage.clickOnAdminApplyLeaveLink();
+    	System.out.println("Admin clicks Apply Leave link");
+    }
+    
+    @When("the Admin clicks the My Leave link")
+    public void the_admin_clicks_the_my_leave_link() 
+    {
+
+    }
+    
+    @When("the Admin clicks the Entitlement link")
+    public void the_admin_clicks_the_entitlement_link() 
+    {
+
+    }
+    
+    @When("the Admin clicks the Reports link")
+    public void the_admin_clicks_the_reports_link() 
+    {
+
+    }
+    
+    @When("the Admin clicks the Configure link")
+    public void the_admin_clicks_the_configure_link() 
+    {
+
+    }
+    
+    @When("the Admin clicks the Leave List link")
+    public void the_admin_clicks_the_leave_list_link() 
+    {
+
+    }
+    
+    @When("the Admin clicks the Assign Leave link")
+    public void the_admin_clicks_the_assign_leave_link() 
+    {
+
+    }
 }

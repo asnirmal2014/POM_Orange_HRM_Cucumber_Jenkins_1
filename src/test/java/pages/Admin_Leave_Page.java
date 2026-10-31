@@ -27,6 +27,24 @@ public class Admin_Leave_Page
         return new WebDriverWait(driver, Duration.ofSeconds(10));
     }
     
-    //By usermgmtLinkLocator = By.xpath("//span[contains(@class,'oxd-topbar-body-nav-tab-item') and normalize-space()='User Management']");
-        
+    By adminLeaveSideMenuLinkLocator = By.xpath("//span[contains(@class,'oxd-text oxd-text--span oxd-main-menu-item--name') and normalize-space()='Leave']");
+    By adminApplyLeaveLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Apply']");
+    
+    public void clickOnAdminLeaveSideMenu()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminLeaveSideMenuLink = wait.until(ExpectedConditions.elementToBeClickable(adminLeaveSideMenuLinkLocator));
+        adminLeaveSideMenuLink.click();
+    }
+    
+    public void clickOnAdminApplyLeaveLink()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminApplyLeaveLink = wait.until(ExpectedConditions.elementToBeClickable(adminApplyLeaveLinkLocator));
+        adminApplyLeaveLink.click();
+    }
+    
+    
 }
