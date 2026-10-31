@@ -21,5 +21,3 @@ Feature: OrangeHRM Admin features and functionalities
     
     #And User clicks on the Buzz page icon from the Admin page
   	#Then User should be navigated to the Buzz page
-
-    

@@ -158,7 +158,8 @@ public class Admin_StepDefs
     {
     	adminPage.clickOnBuzzPageLink();
     }
-
+    
+    /* As of now we didn't use this method */
     @Then("User should be navigated to the Buzz page")
     public void user_should_be_navigated_to_the_Buzz_page()
     {
@@ -168,6 +169,4 @@ public class Admin_StepDefs
     	System.out.println("Current URL: " + driver.getCurrentUrl());
 		System.out.println("Page title: " + driver.getTitle());
     }
-    
-    
 }

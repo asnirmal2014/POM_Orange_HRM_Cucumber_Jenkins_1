@@ -106,6 +106,7 @@ public class Admin_Page
 		helpIconLink.click();
 	}
 	
+	/* As of now we didn't use this method */
 	public void clickOnBuzzPageLink()
 	{
 		WaitUtils.pause(5);   // 5 seconds
