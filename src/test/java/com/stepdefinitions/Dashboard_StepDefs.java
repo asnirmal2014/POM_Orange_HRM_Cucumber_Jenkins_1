@@ -9,7 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import pages.Dashboard_Page;
-import utility.DriverManager;
+import utility.WebDriverManager;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
@@ -21,7 +21,7 @@ public class Dashboard_StepDefs
 
     public Dashboard_StepDefs()
     {
-    	driver = DriverManager.getDriver();
+    	driver = WebDriverManager.getDriver();
     	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	dashboard = PageFactory.initElements(driver, Dashboard_Page.class);
     }

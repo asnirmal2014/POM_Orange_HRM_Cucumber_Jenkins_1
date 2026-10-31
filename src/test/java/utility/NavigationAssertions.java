@@ -10,7 +10,7 @@ public class NavigationAssertions
 {
     public static void verifyUrlContains(String expectedUrl)
     {
-        WebDriver driver = DriverManager.getDriver();
+        WebDriver driver = WebDriverManager.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         boolean isUrlMatched = wait.until(ExpectedConditions.urlContains(expectedUrl));
 		Assertions.assertTrue(isUrlMatched, "Navigation verification failed. Expected URL to contain: " + expectedUrl);

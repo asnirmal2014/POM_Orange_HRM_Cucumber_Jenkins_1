@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.PIM_Page;
-import utility.DriverManager;
+import utility.WebDriverManager;
 
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class PIM_StepDefs
@@ -21,7 +21,7 @@ public class PIM_StepDefs
     // Page objects are initialized with the driver created by Hooks.@Before
     public PIM_StepDefs()
     {
-    	driver = DriverManager.getDriver();
+    	driver = WebDriverManager.getDriver();
     	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	pimPage = PageFactory.initElements(driver, PIM_Page.class);
     }

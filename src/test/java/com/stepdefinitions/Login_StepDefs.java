@@ -10,7 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Login_Page;
-import utility.DriverManager;
+import utility.WebDriverManager;
 
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Login_StepDefs 
@@ -22,8 +22,8 @@ public class Login_StepDefs
 	@Given("User opens the OrangeHRM login page")
 	public void user_opens_the_orange_hrm_login_page() 
 	{
-		DriverManager.startBrowser();
-		driver = DriverManager.getDriver();
+		WebDriverManager.startBrowser();
+		driver = WebDriverManager.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		loginPage = PageFactory.initElements(driver, Login_Page.class);
 		loginPage.openLoginPage();
