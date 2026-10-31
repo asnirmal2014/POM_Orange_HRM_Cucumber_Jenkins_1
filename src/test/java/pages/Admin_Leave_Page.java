@@ -31,7 +31,7 @@ public class Admin_Leave_Page
     By adminApplyLeaveLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Apply']");
     By adminMyLeaveLinkLocator = By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='My Leave']");
     By adminEntitlementsLinkLocator = By.xpath("//span[contains(@class,'oxd-topbar-body-nav-tab-item') and normalize-space()='Entitlements']");
-     
+    By adminReportsLinkLocator = By.xpath("//span[contains(@class,'oxd-topbar-body-nav-tab-item') and normalize-space()='Reports']");
     
     public void clickOnAdminLeaveSideMenu()
     {
@@ -65,5 +65,11 @@ public class Admin_Leave_Page
         adminEntitlementsLink.click();
     }
     
-    
+    public void clickOnAdminReportsLink()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminReportsLink = wait.until(ExpectedConditions.elementToBeClickable(adminReportsLinkLocator));
+        adminReportsLink.click();
+    }
 }

@@ -60,7 +60,8 @@ public class Admin_Leave_StepDefs
     @When("the Admin clicks the Reports link")
     public void the_admin_clicks_the_reports_link() 
     {
-
+    	adminLeavePage.clickOnAdminReportsLink();
+    	System.out.println("Admin clicks the Reports link");
     }
     
     @When("the Admin clicks the Configure link")
