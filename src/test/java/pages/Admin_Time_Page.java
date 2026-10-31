@@ -102,5 +102,13 @@ public class Admin_Time_Page
     }
     */
     
+    By adminTimeSideMenuLinkLocator = By.xpath("//span[contains(@class,'oxd-text oxd-text--span oxd-main-menu-item--name') and normalize-space()='Time']");
     
+    public void clickOnAdminTimeSideMenu()
+    {
+		WaitUtils.pause(5);   // 5 seconds
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement adminTimeSideMenuLink = wait.until(ExpectedConditions.elementToBeClickable(adminTimeSideMenuLinkLocator));
+        adminTimeSideMenuLink.click();
+    }
 }

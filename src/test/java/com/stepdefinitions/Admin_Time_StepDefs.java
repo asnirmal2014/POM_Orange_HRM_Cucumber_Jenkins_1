@@ -1,7 +1,6 @@
 package com.stepdefinitions;
 
 import java.time.Duration;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -29,6 +28,35 @@ public class Admin_Time_StepDefs
     	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	adminTimePage = PageFactory.initElements(driver, Admin_Time_Page.class);
     }
+
+    @When("the Admin clicks on the Time menu the Time\\/Timesheets page opens")
+    public void the_admin_clicks_on_the_time_menu_the_time_timesheets_page_opens() 
+    {
+    	adminTimePage.clickOnAdminTimeSideMenu();
+    	System.out.println("Admin clicks on the Time menu the Time/Timesheets page opens");
+    }
     
+    @When("the Admin clicks Timesheets link")
+    public void the_admin_clicks_timesheets_link() 
+    {
+
+    }
     
+    @When("the Admin clicks the Attendance link")
+    public void the_admin_clicks_the_attendance_link() 
+    {
+
+    }
+    
+    @When("the Admin clicks the Timesheets Reports link")
+    public void the_admin_clicks_the_timesheets_reports_link() 
+    {
+
+    }
+    
+    @When("the Admin clicks the ProjectInfo link")
+    public void the_admin_clicks_the_project_info_link() 
+    {
+
+    }
 }
