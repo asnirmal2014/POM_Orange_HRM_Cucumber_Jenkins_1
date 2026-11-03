@@ -27,6 +27,11 @@ public class Login_StepDefs
 		WebDriverManager.startBrowser();
 		driver = WebDriverManager.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+		// LoginPage loginPage = PageFactory.initElements(driver, Login_Page.class); // initialize this page's elements
+		// [ OR ]
+		// PageFactory.initElements(driver, this);                                   // initialize this page's elements
+		
 		loginPage = PageFactory.initElements(driver, Login_Page.class);
 		loginPage.openLoginPage();
 	}
