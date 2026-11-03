@@ -5,11 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.pages.Dashboard_Page;
+import com.utility.WebDriverManager;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import pages.Dashboard_Page;
-import utility.WebDriverManager;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */

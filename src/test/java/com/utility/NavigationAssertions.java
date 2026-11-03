@@ -1,4 +1,4 @@
-package utility;
+package com.utility;
 
 import java.time.Duration;
 import org.junit.jupiter.api.Assertions;

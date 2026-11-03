@@ -1,4 +1,4 @@
-package runner;
+package com.runner;
 
 import io.cucumber.junit.platform.engine.Constants;
 import org.junit.platform.suite.api.ConfigurationParameter;

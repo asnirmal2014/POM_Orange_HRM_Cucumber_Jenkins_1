@@ -6,11 +6,13 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.pages.Login_Page;
+import com.utility.WebDriverManager;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.Login_Page;
-import utility.WebDriverManager;
 
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Login_StepDefs 

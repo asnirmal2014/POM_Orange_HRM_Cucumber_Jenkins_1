@@ -8,11 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.pages.Admin_Page;
+import com.utility.WaitUtils;
+import com.utility.WebDriverManager;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.Admin_Page;
-import utility.WebDriverManager;
-import utility.WaitUtils;
 
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Admin_StepDefs

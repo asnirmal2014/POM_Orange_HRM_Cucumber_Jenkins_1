@@ -1,4 +1,4 @@
-package pages;
+package com.pages;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
@@ -8,7 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utility.WaitUtils;
+
+import com.utility.WaitUtils;
 
 /* Only method calling happens in the Step Definition file and method definition happens in the Page files */
 public class Admin_Page 
