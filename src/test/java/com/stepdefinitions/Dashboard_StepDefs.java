@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.pages.Dashboard_Page;
-import com.utility.WebDriverManager;
+import com.utility.MyWebDriverManager;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -24,7 +24,7 @@ public class Dashboard_StepDefs
 
     public Dashboard_StepDefs()
     {
-    	driver = WebDriverManager.getDriver();
+    	driver = MyWebDriverManager.getDriver();
     	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	dashboard = PageFactory.initElements(driver, Dashboard_Page.class);
     }

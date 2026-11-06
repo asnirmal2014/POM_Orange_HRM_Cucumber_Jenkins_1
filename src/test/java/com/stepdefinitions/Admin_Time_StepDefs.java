@@ -11,7 +11,7 @@ import com.pages.Admin_Leave_Page;
 import com.pages.Admin_Page;
 import com.pages.Admin_Time_Page;
 import com.utility.WaitUtils;
-import com.utility.WebDriverManager;
+import com.utility.MyWebDriverManager;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -26,7 +26,7 @@ public class Admin_Time_StepDefs
     // Page objects are initialized with the driver created by Hooks.@Before
     public Admin_Time_StepDefs()
     {
-    	driver = WebDriverManager.getDriver();
+    	driver = MyWebDriverManager.getDriver();
     	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	adminTimePage = PageFactory.initElements(driver, Admin_Time_Page.class);
     }

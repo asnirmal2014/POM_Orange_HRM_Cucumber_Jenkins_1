@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.pages.Admin_Page;
 import com.utility.WaitUtils;
-import com.utility.WebDriverManager;
+import com.utility.MyWebDriverManager;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,7 +25,7 @@ public class Admin_StepDefs
     // Page objects are initialized with the driver created by Hooks.@Before
     public Admin_StepDefs()
     {
-    	driver = WebDriverManager.getDriver();
+    	driver = MyWebDriverManager.getDriver();
     	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         adminPage = PageFactory.initElements(driver, Admin_Page.class);
     }

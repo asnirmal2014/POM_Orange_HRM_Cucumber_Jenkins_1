@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.pages.Login_Page;
-import com.utility.WebDriverManager;
+import com.utility.MyWebDriverManager;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -24,8 +24,8 @@ public class Login_StepDefs
 	@Given("User opens the OrangeHRM login page")
 	public void user_opens_the_orange_hrm_login_page() 
 	{
-		WebDriverManager.startBrowser();
-		driver = WebDriverManager.getDriver();
+		MyWebDriverManager.startBrowser();
+		driver = MyWebDriverManager.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		// LoginPage loginPage = PageFactory.initElements(driver, Login_Page.class); // initialize this page's elements
